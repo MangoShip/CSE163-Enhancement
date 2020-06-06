@@ -14,11 +14,19 @@ Enhancement project of radial cluster layout
 var width = 1260,
     height = 1150;
 
+// Scale Changes as we Zoom
+// Call the function d3.behavior.zoom to Add zoom
+// Reference: https://bl.ocks.org/mbostock/db6b4335bf1662b413e7968910104f0f/e59ab9526e02ec7827aa7420b0f02f9bcf960c7d - Pan & Zoom Axes by Mike Bostock
+var zoom = d3.zoom()   
+    .scaleExtent([0.5, 32]) // Set boundary of how much to zoom in and out.
+    .on("zoom", zoomed); // Event listener for mouse movement. 
+
 //Define SVG
 var svg = d3.select("body")
     .append("svg")
     .attr("width", width)
-    .attr("height", height);
+    .attr("height", height)
+    .call(zoom);
 
 var g = svg.append("g")
     .attr("transform", "translate(" + (width / 2 + 50) + "," + (height / 2 + 25) + ")");
@@ -38,7 +46,7 @@ var tree = d3.cluster()
 var color = d3.scaleOrdinal()
     .range(["rgb(255, 247, 0)", 'rgb(255, 51, 0)', 'rgb(153, 102, 0)', 'rgb(255, 212, 128)', 'rgb(51, 204, 255)', 'rgb(0, 255, 0)']);
 
-var filteredNode, filteredLink, whiteLink;
+var node, link, filteredNode, filteredLink, whiteLink; // eslint-disable-line
 
 d3.csv("radial_food_data.csv").then(function(data){
     //console.log(stratify(data)
@@ -50,7 +58,7 @@ d3.csv("radial_food_data.csv").then(function(data){
     console.log(root);
     console.log(root.descendants().slice(1));
 	
-    var link = g.selectAll(".link") // eslint-disable-line
+    link = g.selectAll(".link") // eslint-disable-line
         .data(root.descendants().slice(1))
         .enter().append("path")
         .attr("class", "link")
@@ -63,15 +71,8 @@ d3.csv("radial_food_data.csv").then(function(data){
         .style("stroke", function(d) { return color(d.data.value)})
         .style("stroke-width", "1px")
         .style("opacity", 0.5);
-	
-	/*link.on("mouseover", function(d) {	
-		var filteredLink = link.filter(function(e) {
-			return d.ancestors().indexOf(e) > -1
-		});
-		filteredLink.selectAll("path").style("stroke", "white").style("stroke-width", "2px");
-	});*/
 
-    var node = g.selectAll(".node")
+    node = g.selectAll(".node")
         .data(root.descendants())
         .enter().append("g")
         .attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); }) // Node is parent, "node--internal". Otherwise, "node--leaf" for css style.
@@ -93,11 +94,11 @@ d3.csv("radial_food_data.csv").then(function(data){
 	
 	// Reference: "https://bl.ocks.org/anonymous/bb5be85d509eb7824e95d193c4fb6d27/e87fb16f8058f85719647dde561bff12f998361a" Radial Tidy Tree by Gerardo Furtado
 	node.on("mouseover", function(d) {	
-		console.log(d.ancestors());
+		//console.log(d.ancestors());
 		filteredNode = node.filter(function(e) {
 			return d.ancestors().indexOf(e) > -1
 		});
-		console.log(filteredNode);
+		//console.log(filteredNode);
 		
 		filteredNode.selectAll("circle")
 			.style("fill", "white")
@@ -112,7 +113,7 @@ d3.csv("radial_food_data.csv").then(function(data){
 		
 		filteredLink = d.ancestors();
 		filteredLink.pop();
-		console.log(filteredLink);
+		//console.log(filteredLink);
 		whiteLink = g.selectAll(".whiteLink")
             .data(filteredLink)
             .enter().append("path")
@@ -125,7 +126,7 @@ d3.csv("radial_food_data.csv").then(function(data){
             })
             .style("stroke", "white")
             .style("stroke-width", "2px")
-            .style("opacity", 0.5);
+            .style("opacity", 0.8);
 		
 		//d3.selectAll(".link").style("stroke", "white").style("stroke-width", "2px");
 	});
@@ -135,9 +136,16 @@ d3.csv("radial_food_data.csv").then(function(data){
 		filteredNode.selectAll("circle").attr("r", 2.5).style("fill", d.data.value == 0? "rgb(255,255,255)":color(d.data.value));
 		filteredNode.selectAll("text").style("font-size", "10px").style("fill", d.data.value == 0? "rgb(255,255,255)":color(d.data.value));
 		
-		console.log(whiteLink);
+		//console.log(whiteLink);
 		whiteLink.style("stroke", function(d) { return color(d.data.value)}).style("stroke-width", "1px");
 	});
+	
+	// Reference: https://stackoverflow.com/questions/39688256/force-layout-zoom-resets-on-first-tick-of-dragging-or-zomming
+	var transform = d3.zoomIdentity
+        .translate(width / 2.5, height / 2.5)
+        .scale(0.9);
+	
+	svg.call(zoom.transform, transform);
 });
 
 // Function that creates a radial shape for the layout.
@@ -151,7 +159,20 @@ function project(x, y) { // Starting from the "display" (first in the array) mov
     return [radius * Math.cos(angle), radius * Math.sin(angle)];
 }
 
+// Function that 
+// Reference: https://bl.ocks.org/mbostock/db6b4335bf1662b413e7968910104f0f/e59ab9526e02ec7827aa7420b0f02f9bcf960c7d - Pan & Zoom Axes by Mike Bostock
+function zoomed() {
+	console.log(d3.event.transform.x)
+	// Change the circle size and position 
+	//link.attr("transform", d3.event.transform);
+	// Change the text size and position 
+	//node.attr("transform", d3.event.transform);
+	// Rescale the x and y axis 
+	//g.attr("transform", "translate(" + d3.event.transform.x + "," + d3.event.transform.y + ")");
+	g.attr("transform", d3.event.transform);
 
+
+}
 
 
 
