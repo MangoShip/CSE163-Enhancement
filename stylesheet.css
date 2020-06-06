@@ -1,0 +1,21 @@
+/* ----------------------------------------------------------------------------
+File: stylesheet.css
+Name: Mingun Cho 
+CruzID: mcho23@ucsc.edu
+StudentID: 1654724
+-----------------------------------------------------------------------------*/
+
+.node text {
+  font: 10px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+title {
+	text-align:center; 
+	color:black; 
+	font-size:30px; 
+}

@@ -1,0 +1,158 @@
+id,value
+food,0
+food.dairy,1
+food.dairy.Butter,1
+food.dairy.Casein,1
+food.dairy.Cheese,1
+food.dairy.Cream,1
+food.dairy.Ice Cream,1
+food.dairy.Milk,1
+food.dairy.Whey,1
+food.dairy.Yogurt,1
+food.fruits,2
+food.fruits.Apple,2
+food.fruits.Apricots,2
+food.fruits.Avocado,2
+food.fruits.Banana,2
+food.fruits.Blackberries,2
+food.fruits.Blueberries,2
+food.fruits.Cantaloupe,2
+food.fruits.Cherries,2
+food.fruits.Clementine,2
+food.fruits.Cranberries,2
+food.fruits.Dragonfruit,2
+food.fruits.Durian,2
+food.fruits.Grapefruit,2
+food.fruits.Grapes,2
+food.fruits.Guava,2
+food.fruits.Lemon,2
+food.fruits.Lime,2
+food.fruits.Lychee,2
+food.fruits.Mandarin,2
+food.fruits.Mango,2
+food.fruits.Nectarine,2
+food.fruits.Orance,2
+food.fruits.Papaya,2
+food.fruits.Passion Fruit,2
+food.fruits.Peaches,2
+food.fruits.Pear,2
+food.fruits.Persimmon,2
+food.fruits.Pineapple,2
+food.fruits.Plums,2
+food.fruits.Pomegranate,2
+food.fruits.Raspberries,2
+food.fruits.Strawberries,2
+food.fruits.Tangerine,2
+food.fruits.Watermelon,2
+food.meat,3
+food.meat.Bacon,3
+food.meat.Beef,3
+food.meat.Chicken,3
+food.meat.Duck,3
+food.meat.Ham,3
+food.meat.Lamb,3
+food.meat.Pork,3
+food.meat.Salami,3
+food.meat.Sausage,3
+food.meat.Steak,3
+food.meat.Turkey,3
+food.nuts,4
+food.nuts.Almond,4
+food.nuts.Cashew,4
+food.nuts.Chestnut,4
+food.nuts.Coconut,4
+food.nuts.Hazelnut,4
+food.nuts.Macadamia,4
+food.nuts.Peanut,4
+food.nuts.Pecan,4
+food.nuts.Pistachio,4
+food.nuts.Walnut,4
+food.seafood,5
+food.seafood.fish,5
+food.seafood.fish.Bass,5
+food.seafood.fish.Carp,5
+food.seafood.fish.Catfish,5
+food.seafood.fish.Cod,5
+food.seafood.fish.Flounder,5
+food.seafood.fish.Salmon,5
+food.seafood.fish.Trout,5
+food.seafood.fish.Tuna,5
+food.seafood.clams,5
+food.seafood.clams.donax,5
+food.seafood.clams.donax.Bean,5
+food.seafood.clams.donax.Tellines,5
+food.seafood.clams.donax.Coquinas,5
+food.seafood.clams.Geoduck,5
+food.seafood.clams.hard-Shell,5
+food.seafood.clams.hard-Shell.Cherrystones,5
+food.seafood.clams.hard-Shell.Chowders,5
+food.seafood.clams.hard-Shell.Littlenecks,5
+food.seafood.clams.hard-Shell.Middlenecks,5
+food.seafood.clams.Manila,5
+food.seafood.clams.Ocean Quahog,5
+food.seafood.clams.razor,5
+food.seafood.clams.razor.Atlantic Jackknife,5
+food.seafood.clams.razor.Bamboo,5
+food.seafood.clams.razor.Pacific,5
+food.seafood.clams.Soft-Shell,5
+food.seafood.clams.surf,5
+food.seafood.clams.surf.Bar,5
+food.seafood.clams.surf.Skimmers,5
+food.vegetables,6
+food.vegetables.bulbs,6
+food.vegetables.bulbs.Fennel,6
+food.vegetables.bulbs.Garlic,6
+food.vegetables.bulbs.Leeks,6
+food.vegetables.bulbs.Onions,6
+food.vegetables.bulbs.Shallots,6
+food.vegetables.bulbs.Spring onions,6
+food.vegetables.flowers,6
+food.vegetables.flowers.Broccoli,6
+food.vegetables.flowers.Cauliflower,6
+food.vegetables.flowers.Fresh herbs,6
+food.vegetables.fruits,6
+food.vegetables.fruits.Capsicums,6
+food.vegetables.fruits.Chilli peppers,6
+food.vegetables.fruits.Cucumber,6
+food.vegetables.fruits.Eggplant,6
+food.vegetables.fruits.Melons,6
+food.vegetables.fruits.Pumpkins,6
+food.vegetables.fruits.Tomatoes,6
+food.vegetables.fungi,6
+food.vegetables.fungi.Mushrooms,6
+food.vegetables.leaves,6
+food.vegetables.leaves.Brussels Sprouts,6
+food.vegetables.leaves.Cabbages,6
+food.vegetables.leaves.Kale,6
+food.vegetables.leaves.Lettuce,6
+food.vegetables.leaves.Spinach,6
+food.vegetables.roots,6
+food.vegetables.roots.Beetroot,6
+food.vegetables.roots.Carrots,6
+food.vegetables.roots.Ginger,6
+food.vegetables.roots.Parsnips,6
+food.vegetables.roots.Radishes,6
+food.vegetables.roots.Turnips,6
+food.vegetables.seeds,6
+food.vegetables.seeds.beans,6
+food.vegetables.seeds.beans.Black Beans,6
+food.vegetables.seeds.beans.Black-eyed Peas,6
+food.vegetables.seeds.beans.Cannellini Beans,6
+food.vegetables.seeds.beans.Fava Beans,6
+food.vegetables.seeds.beans.Garbanzo Beans,6
+food.vegetables.seeds.beans.Great Northern Beans,6
+food.vegetables.seeds.beans.Kidney Beans,6
+food.vegetables.seeds.beans.Lentils,6
+food.vegetables.seeds.beans.Lima Beans,6
+food.vegetables.seeds.beans.Navy Beans,6
+food.vegetables.seeds.beans.Pinto Beans,6
+food.vegetables.seeds.beans.Red Beans,6
+food.vegetables.seeds.beans.Soybeans,6
+food.vegetables.seeds.Peas,6
+food.vegetables.seeds.Sweet Corn,6
+food.vegetables.stems,6
+food.vegetables.stems.Asparagus,6
+food.vegetables.stems.Celery,6
+food.vegetables.tubers,6
+food.vegetables.tubers.Potatoes,6
+food.vegetables.tubers.Yams,6
