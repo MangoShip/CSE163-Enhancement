@@ -5,6 +5,10 @@ CruzID: mcho23@ucsc.edu
 StudentID: 1654724
 -----------------------------------------------------------------------------*/
 
+body {
+	background-color: white;
+}
+
 .node text {
   font: 10px sans-serif;
 }
@@ -14,8 +18,64 @@ StudentID: 1654724
   stroke-width: 1.5px;
 }
 
-title {
-	text-align:center; 
-	color:black; 
-	font-size:30px; 
+/* Tooltip style */
+/* Reference: Interactive Data Visualization for the Web Ch.10 */
+#tooltip {
+	position: absolute;
+	width: 250px;
+	height: 500px;
+	padding: 3px;
+	background-color: white;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	pointer-events: none;
+	font-weight: bold;
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 10px;
+	line-height: 13px;
+}
+
+/* Make tooltip invisible */
+#tooltip.hidden {
+	display: none;
+}
+
+.title {
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 8px;
+}
+
+.type {
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.column{
+	width:25%;
+	float:left;
+}
+
+.row{
+	overflow:hidden;
+	width:100%;
+	font-family: sans-serif
+}
+
+.head{
+	font-size: 25px; 
+	margin-bottom: 10px
+}
+
+svg {
+	display: block;
+	margin: auto;
 }

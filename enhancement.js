@@ -11,8 +11,8 @@ Enhancement project of radial cluster layout
 /*eslint no-console: 0*/
 /*global d3 */    
 
-var width = 1260,
-    height = 1150;
+var width = 1060,
+    height = 950;
 
 // Scale Changes as we Zoom
 // Call the function d3.behavior.zoom to Add zoom
@@ -26,10 +26,16 @@ var svg = d3.select("body")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
+    //.attr("viewBox", "-100 -100 960 850")
     .call(zoom);
 
+svg.append("rect")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("fill", "black");
+
 var g = svg.append("g")
-    .attr("transform", "translate(" + (width / 2 + 50) + "," + (height / 2 + 25) + ")");
+    .attr("transform", "translate(" + 1000 + "," + (height / 2 + 25) + ")");
 
 // When reading data file, assign parent to each node. (Substring from index 0 to the last '.')
 var stratify = d3.stratify()
@@ -45,6 +51,10 @@ var tree = d3.cluster()
 
 var color = d3.scaleOrdinal()
     .range(["rgb(255, 247, 0)", 'rgb(255, 51, 0)', 'rgb(153, 102, 0)', 'rgb(255, 212, 128)', 'rgb(51, 204, 255)', 'rgb(0, 255, 0)']);
+
+// Define Tooltip here
+// Reference: Interactive Data Visualization for the Web Ch.10
+var tooltip = d3.select("#tooltip");
 
 var node, link, filteredNode, filteredLink, whiteLink; // eslint-disable-line
 
@@ -128,8 +138,51 @@ d3.csv("radial_food_data.csv").then(function(data){
             .style("stroke-width", "2px")
             .style("opacity", 0.8);
 		
-		//d3.selectAll(".link").style("stroke", "white").style("stroke-width", "2px");
+		if(d.children == null){ // only show tooltip on leaf nodes
+            var name = d.id.substring(d.id.lastIndexOf(".")+1);
+			var type;
+			
+			if(d.data.value == 1){
+				type = "Dairy";
+			}
+			else if(d.data.value == 2){
+				type = "Fruit";
+			}
+			else if(d.data.value == 3){
+				type = "Meat";
+			}
+			else if(d.data.value == 4){
+				type = "Nut";
+			}
+			else if(d.data.value == 5){
+				type = "Seafood";
+			}
+			else{
+				type = "Vegetable";
+			}
+			
+			tooltip.style("left", (d3.event.pageX + 25) + "px")
+                .style("top", (d3.event.pageY + 25) + "px")
+                .select("#name")
+                .text(name);
+
+			tooltip.select("#type")
+                .text(type);
+			
+			tooltip.append("img")
+                .attr("src", "images/" + name + ".jpg");
+			
+			// Make tooltip visible.
+            d3.select("#tooltip").classed("hidden", false);
+			console.log(tooltip);
+			
+		}
 	});
+
+	node.on("mousemove", function() { // tooltip follow the mouse
+        tooltip.style("left", (d3.event.pageX + 25) + "px")
+            .style("top", (d3.event.pageY + 25) + "px");   
+    });
 	
 	node.on("mouseout", function(d) {
 		//filteredNode.select("circle").removel;
@@ -137,12 +190,18 @@ d3.csv("radial_food_data.csv").then(function(data){
 		filteredNode.selectAll("text").style("font-size", "10px").style("fill", d.data.value == 0? "rgb(255,255,255)":color(d.data.value));
 		
 		//console.log(whiteLink);
-		whiteLink.style("stroke", function(d) { return color(d.data.value)}).style("stroke-width", "1px");
+		whiteLink.remove();
+		
+		// Make tooltip invisible when mouse is off. 
+        d3.select("#tooltip").classed("hidden", true);
+		
+		tooltip.select("img").remove();
+
 	});
 	
 	// Reference: https://stackoverflow.com/questions/39688256/force-layout-zoom-resets-on-first-tick-of-dragging-or-zomming
 	var transform = d3.zoomIdentity
-        .translate(width / 2.5, height / 2.5)
+        .translate(width / 2, height / 2)
         .scale(0.9);
 	
 	svg.call(zoom.transform, transform);
@@ -162,7 +221,7 @@ function project(x, y) { // Starting from the "display" (first in the array) mov
 // Function that 
 // Reference: https://bl.ocks.org/mbostock/db6b4335bf1662b413e7968910104f0f/e59ab9526e02ec7827aa7420b0f02f9bcf960c7d - Pan & Zoom Axes by Mike Bostock
 function zoomed() {
-	console.log(d3.event.transform.x)
+	//console.log(d3.event.transform.x)
 	// Change the circle size and position 
 	//link.attr("transform", d3.event.transform);
 	// Change the text size and position 

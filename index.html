@@ -9,70 +9,61 @@
     <!-- Meta Tag -->
     <meta charset="utf-8">
     <!-- Title Tag -->
-    <title>Enhancement Project</title>
+    <title>Food Radial Cluster Layout</title>
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" type="text/css" href="stylesheet.css">  
     <!-- D3.js Source -->
     <script type= "text/javascript" src="https://d3js.org/d3.v5.min.js"></script> 
   </head>
-    
-  <body style = "background-color: black">
+    <body style = "background-color: #f5f6f7">
     <!-- Title (with color) -->
-	<h4 style = "text-align:center; font-size:30px; margin-bottom: 10px; color:white">Enhancement Project</h4>
-	<h4 style = "text-align:center; font-size:23px; margin-top: 15px; color:white">-Radial Cluster Layout-</h4>
-		<h4 style = "position: absolute; margin-top: 1150px; line-height: 5px; color:white">
-			<p>Mingun Cho</p>
-	  	  	<p>Intructor: Suresh Lodha</p>
-		  	<p>D3 Resources: </p>
-			 	<ul style = line-height:17px>
-				 	<li><a href="https://github.com/d3/d3/blob/master/API.md"> D3 API Reference</a></li>
-				 	<li>Interactive Data Visualization for the Web 2nd Edition</li>
-			 	</ul>
-		  	<p>Web Resources: </p>
-			 	<ul style = line-height:19px>
-				 	<li><a href="https://www.d3-graph-gallery.com/graph/dendrogram_basic.html"> Most basic dendrogram in d3.js</a></li>
-      				<li><a href="https://bl.ocks.org/mbostock/4339607"> Radial Cluster Dendrogram by Mike Bostock</a></li>
-					<li><a href="https://bl.ocks.org/anonymous/bb5be85d509eb7824e95d193c4fb6d27/e87fb16f8058f85719647dde561bff12f998361a"> Radial Tidy Tree by Gerardo Furtado</a></li>
-					<li><a href="https://stackoverflow.com/questions/39688256/force-layout-zoom-resets-on-first-tick-of-dragging-or-zomming"> Initializing Zoom, Pan+Drag</a></li>
-			 	</ul>
-		  	<p>Data Resources: </p>
-			 	<ul style = line-height:19px>
-				 	<li><a href="https://www.myrecipes.com/ingredients/types-of-beans"> 13 Common Types of Beans and How to Use Them</a></li>
-      				<li><a href="https://www.halfyourplate.ca/fruits-and-veggies/fruits-a-z/"> Fruits From A-Z</a></li>
-      				<li><a href="https://www.thespruceeats.com/types-of-clams-4067419"> Types of Clams</a></li>
-      				<li><a href="https://www.vegetables.co.nz/vegetables-a-z/9"> Vegetables A-Z</a></li>
-			 	</ul>
-		  	<p>CSE 163: Data programming for Visualization</p>
-		  	<p>Spring 2020</p>
-	     </h4>
-    <!-- Your D3.js code for making a Line Graph -->
-    <script type="text/javascript" src="enhancement.js"></script>   
-    
-    <!-- Submission Info -->
-    <!--<h4>Created by "Mingun Cho"</h4>-->
-    <!--<p>Enhancement project of radial cluster layout.</p>-->  
-    <!--<h4>Files Submitted:</h4>-->
-    <!--<ul>
-      <li>index.html</li>
-      <li>stylesheet.css</li>
-      <li>enhancement.js</li>
-      <li>radial_food_data.csv</li> 
-    </ul>-->
-    <!--<h4> Web Resources: </h4>-->
-    <!--<ul>
-      <li><a href="https://www.d3-graph-gallery.com/graph/dendrogram_basic.html"> Most basic dendrogram in d3.js</a></li>
-      <li><a href="https://bl.ocks.org/mbostock/4339607"> Radial Cluster Dendrogram by Mike Bostock</a></li>
-	  <li><a href="https://bl.ocks.org/git-ashish/3aa81521f96e48198c80b4e2742bb6bc"> Tree of Life by Ashish Singh</a></li>
-	  <li><a href="https://bl.ocks.org/anonymous/bb5be85d509eb7824e95d193c4fb6d27/e87fb16f8058f85719647dde561bff12f998361a"> Radial Tidy Tree by Gerardo Furtado</a></li>
-	  <li><a href="https://stackoverflow.com/questions/39688256/force-layout-zoom-resets-on-first-tick-of-dragging-or-zomming"> Initializing Zoom, Pan+Drag</a></li>
-    </ul>-->
-	<!--<h4> Data Resources: </h4>-->
-    <!--<ul>
-      <li><a href="https://www.myrecipes.com/ingredients/types-of-beans"> 13 Common Types of Beans and How to Use Them</a></li>
-      <li><a href="https://www.halfyourplate.ca/fruits-and-veggies/fruits-a-z/"> Fruits From A-Z</a></li>
-      <li><a href="https://www.thespruceeats.com/types-of-clams-4067419"> Types of Clams</a></li>
-      <li><a href="https://www.vegetables.co.nz/vegetables-a-z/9"> Vegetables A-Z</a></li>
-    </ul>-->
+	<div style = "color:black; background-color: #f5f6f7">
+		<h4 style = "text-align:center; font-size:40px; margin-bottom: 10px; color:black; font-family: sans-serif">Enhancement Project</h4>
+		<h4 style = "text-align:center; font-size:23px; margin-top: 15px; color:black; font-family: sans-serif">-Food Radial Cluster Layout-</h4>
+	</div>
+		<div id="tooltip" class="hidden">
+	    	<div class = "title"><span id="name">Test</span></div>
+			<div class = "type">Type:<span id="type">Test</span></div>
+		</div>
+		<script type="text/javascript" src="enhancement.js"></script> 
+		<div1 style = "color:black; background-color:#f5f6f7">
+			<div1>
+				<p style = "text-align:center; font-size: 30px; padding-top: 20px; font-family: sans-serif">Created by: <strong>Mingun Cho</strong></p>
+	  	  		<p style = "text-align:center; font-size: 20px; font-family: sans-serif">In collaboration with: <strong>Suresh Lodha</strong></p>
+			</div1>
+		</div1>
+		<div class = "row" style = "padding-bottom: 50px">
+			<div class = "column" style = "text-align: center">
+				<p class = "head">Date:<br></p>
+				<p style = "font-size: 20px"><strong>Spring 2020</strong></p>
+			</div>
+			<div class = "column" style = "text-align: center">
+				<p class = "head">Files Submitted:<br></p>
+				<p style = "font-size: 20px">
+					<strong>index.html, stylesheet.css, enhancement.js, 
+					radial_food.data.csv, images(folder)</strong>
+				</p>
+			</div>
+			<div class = "column" style = "text-align: center">
+				<p class = "head">Code Resources:<br></p>
+				<p style = "font-size: 20px; line-height: 25px">
+					<a href="https://www.d3-graph-gallery.com/graph/dendrogram_basic.html"> Most basic dendrogram in d3.js</a><br>
+					<a href="https://bl.ocks.org/mbostock/4339607"> Radial Cluster Dendrogram by Mike Bostock</a><br>
+					<a href="https://bl.ocks.org/anonymous/bb5be85d509eb7824e95d193c4fb6d27/e87fb16f8058f85719647dde561bff12f998361a"> Radial Tidy Tree by Gerardo Furtado</a><br>
+					<a href="https://stackoverflow.com/questions/39688256/force-layout-zoom-resets-on-first-tick-of-dragging-or-zomming"> Initializing Zoom, Pan+Drag</a>
+				</p>
+			</div>
+			<div class = "column" style = "text-align: center">
+				<p class = "head">Data Resources:<br></p>
+				<p style = "font-size: 20px; line-height: 25px">
+					<a href="https://www.myrecipes.com/ingredients/types-of-beans"> 13 Common Types of Beans and How to Use Them</a><br>
+					<a href="https://www.halfyourplate.ca/fruits-and-veggies/fruits-a-z/"> Fruits From A-Z</a><br>
+					<a href="https://www.thespruceeats.com/types-of-clams-4067419"> Types of Clams</a><br>
+					<a href="https://www.vegetables.co.nz/vegetables-a-z/9"> Vegetables A-Z</a>
+				</p>
+			</div>
+
+		</div>
   </body>
     
 </html>

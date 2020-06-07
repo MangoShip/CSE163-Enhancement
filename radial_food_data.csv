@@ -1,13 +1,11 @@
-id,value
+id,value,calories,fat,cholesterol,sodium,carbohydrate,protein
 food,0
 food.dairy,1
 food.dairy.Butter,1
-food.dairy.Casein,1
 food.dairy.Cheese,1
 food.dairy.Cream,1
 food.dairy.Ice Cream,1
 food.dairy.Milk,1
-food.dairy.Whey,1
 food.dairy.Yogurt,1
 food.fruits,2
 food.fruits.Apple,2
@@ -18,7 +16,6 @@ food.fruits.Blackberries,2
 food.fruits.Blueberries,2
 food.fruits.Cantaloupe,2
 food.fruits.Cherries,2
-food.fruits.Clementine,2
 food.fruits.Cranberries,2
 food.fruits.Dragonfruit,2
 food.fruits.Durian,2
@@ -28,10 +25,9 @@ food.fruits.Guava,2
 food.fruits.Lemon,2
 food.fruits.Lime,2
 food.fruits.Lychee,2
-food.fruits.Mandarin,2
 food.fruits.Mango,2
 food.fruits.Nectarine,2
-food.fruits.Orance,2
+food.fruits.Orange,2
 food.fruits.Papaya,2
 food.fruits.Passion Fruit,2
 food.fruits.Peaches,2
@@ -46,7 +42,6 @@ food.fruits.Tangerine,2
 food.fruits.Watermelon,2
 food.meat,3
 food.meat.Bacon,3
-food.meat.Beef,3
 food.meat.Chicken,3
 food.meat.Duck,3
 food.meat.Ham,3
@@ -78,10 +73,7 @@ food.seafood.fish.Salmon,5
 food.seafood.fish.Trout,5
 food.seafood.fish.Tuna,5
 food.seafood.clams,5
-food.seafood.clams.donax,5
-food.seafood.clams.donax.Bean,5
-food.seafood.clams.donax.Tellines,5
-food.seafood.clams.donax.Coquinas,5
+food.seafood.clams.Donax Trunculus,5
 food.seafood.clams.Geoduck,5
 food.seafood.clams.hard-Shell,5
 food.seafood.clams.hard-Shell.Cherrystones,5
@@ -95,9 +87,7 @@ food.seafood.clams.razor.Atlantic Jackknife,5
 food.seafood.clams.razor.Bamboo,5
 food.seafood.clams.razor.Pacific,5
 food.seafood.clams.Soft-Shell,5
-food.seafood.clams.surf,5
-food.seafood.clams.surf.Bar,5
-food.seafood.clams.surf.Skimmers,5
+food.seafood.clams.Surf,5
 food.vegetables,6
 food.vegetables.bulbs,6
 food.vegetables.bulbs.Fennel,6
