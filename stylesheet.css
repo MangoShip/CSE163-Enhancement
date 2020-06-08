@@ -18,12 +18,12 @@ body {
   stroke-width: 1.5px;
 }
 
-/* Tooltip style */
+/* Tooltip style for main */
 /* Reference: Interactive Data Visualization for the Web Ch.10 */
 #tooltip {
 	position: absolute;
 	width: 250px;
-	height: 500px;
+	height: 410px;
 	padding: 3px;
 	background-color: white;
 	-webkit-border-radius: 10px;
@@ -42,6 +42,71 @@ body {
 
 /* Make tooltip invisible */
 #tooltip.hidden {
+	display: none;
+}
+
+/* Tooltip style for image */
+#tooltip2 {
+	position: absolute;
+	width: 250px;
+	height: 150px;
+	padding: 3px;
+	background-color: white;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	pointer-events: none;
+}
+
+/* Make tooltip invisible */
+#tooltip2.hidden {
+	display: none;
+}
+
+/* Tooltip style for nutrition fact box */
+#tooltip3 {
+	position: absolute;
+	width: 245px;
+	height: 190px;
+	margin-left: 4px;
+	background-color: white;
+	pointer-events: none;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	font-family: sans-serif;
+}
+
+/* Make tooltip invisible */
+#tooltip3.hidden {
+	display: none;
+}
+
+/* line style */
+#line {
+	position: absolute;
+	width: 240px;
+	height: 9px;
+	margin-left: 7px;
+	background-color: black;
+}
+
+/* Make line invisible */
+#line.hidden {
+	display: none;
+}
+
+/* line style 2 */
+#line2 {
+	position: absolute;
+	width: 240px;
+	height: 5px;
+	margin-left: 7px;
+	background-color: black;
+}
+
+/* Make line visible */
+#line2.hidden {
 	display: none;
 }
 
@@ -78,4 +143,69 @@ body {
 svg {
 	display: block;
 	margin: auto;
+}
+
+.test {
+	margin-top: 200px;
+	border-radius: 10px;
+	border-color: black;
+	background-color: black;
+}
+
+.nutrition {
+	text-align: center;
+	font-size: 34px;
+	font-weight: bold;
+}
+
+.normal{
+	font-weight:100;
+}
+
+.size {
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 3px;
+	margin-top: 10px;
+}
+
+.calories {
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 3px;
+}
+
+.fat {
+	font-size: 15px;
+	font-weight: bold;
+	margin-left: 3px;
+	margin-top: 7px;
+}
+
+.cholesterol {
+	font-size: 15px;
+	font-weight: bold;
+	margin-left: 3px;
+	margin-top: 2px;
+}
+
+.sodium {
+	font-size: 15px;
+	font-weight: bold;
+	margin-left: 3px;
+	margin-top: 2px;
+}
+
+.carbohydrates{
+	font-size: 15px;
+	font-weight: bold;
+	margin-left: 3px;
+	margin-top: 2px;
+}
+
+.protein{
+	font-size: 15px;
+	font-weight: bold;
+	margin-left: 3px;
+	margin-top: 2px;
 }

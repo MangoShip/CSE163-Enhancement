@@ -4,6 +4,8 @@ Name: Mingun Cho
 CruzID: mcho23@ucsc.edu
 StudentID: 1654724
 Enhancement project of radial cluster layout
+Github Link: https://github.com/MangoShip/CSE163-Enhancement
+Link to visulization: https://mangoship.github.io/CSE163-Enhancement/
 -----------------------------------------------------------------------------------------------------*/ 
 
 /*eslint-env es6*/
@@ -26,9 +28,9 @@ var svg = d3.select("body")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
-    //.attr("viewBox", "-100 -100 960 850")
-    .call(zoom);
+    .call(zoom); // allowing the entire svg to be interactive with zoom feature.
 
+// black background to make the colors more visible.
 svg.append("rect")
     .attr("width", width)
     .attr("height", height)
@@ -49,18 +51,30 @@ var tree = d3.cluster()
 
     //console.log(tree);
 
+// Create a color scheme with specific rgb.
 var color = d3.scaleOrdinal()
     .range(["rgb(255, 247, 0)", 'rgb(255, 51, 0)', 'rgb(153, 102, 0)', 'rgb(255, 212, 128)', 'rgb(51, 204, 255)', 'rgb(0, 255, 0)']);
 
 // Define Tooltip here
 // Reference: Interactive Data Visualization for the Web Ch.10
+// Main canvas of tooltip
 var tooltip = d3.select("#tooltip");
 
+// Tooltip for images
+var tooltip2 = d3.select("#tooltip2");
+
+// Tooltip for nutrition facts
+var tooltip3 = d3.select("#tooltip3");
+
+// Drawing black lines inside the nutrition facts.
+var line = d3.select("#line");
+var line2 = d3.select("#line2");
+
+// Declaring variables that will be used later.
 var node, link, filteredNode, filteredLink, whiteLink; // eslint-disable-line
 
 d3.csv("radial_food_data.csv").then(function(data){
     //console.log(stratify(data)
-    //.sort(function(a, b) { return (a.height - b.height) || a.id.localeCompare(b.id); }));
     // Sort the tree. 1. Less maximum height/depth, the lower the index. 2. Children are alphabetically sorted.
     var root = tree(stratify(data)
         .sort(function(a, b) { return (a.height - b.height) || a.id.localeCompare(b.id); }));
@@ -78,7 +92,7 @@ d3.csv("radial_food_data.csv").then(function(data){
                 + " " + project(d.parent.x, (d.y + d.parent.y) / 2) // Control point at the end of the curve
                 + " " + project(d.parent.x, d.parent.y); // Draw curve to here. (Endpoint)
         })
-        .style("stroke", function(d) { return color(d.data.value)})
+        .style("stroke", function(d) { return color(d.data.value)}) // style the line color with corresponding value
         .style("stroke-width", "1px")
         .style("opacity", 0.5);
 
@@ -88,9 +102,10 @@ d3.csv("radial_food_data.csv").then(function(data){
         .attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); }) // Node is parent, "node--internal". Otherwise, "node--leaf" for css style.
         .attr("transform", function(d) { return "translate(" + project(d.x, d.y) + ")"; }) // Place the nodes
 	
-    node.append("circle")
+    // Drawing circle for each node
+	node.append("circle")
         .attr("r", 2.5) // Place circle for each node
-        .style("fill", function(d) { return d.data.value == 0? "rgb(255,255,255)":color(d.data.value)});
+        .style("fill", function(d) { return d.data.value == 0? "rgb(255,255,255)":color(d.data.value)}); // color the circles with corresponding value
 
 	// Text for each node
     node.append("text")
@@ -102,28 +117,32 @@ d3.csv("radial_food_data.csv").then(function(data){
         .text(function(d) { return d.id.substring(d.id.lastIndexOf(".") + 1); }) // Get the text 
         .style("fill", function(d) { return d.data.value == 0? "rgb(255,255,255)":color(d.data.value)});
 	
-	// Reference: "https://bl.ocks.org/anonymous/bb5be85d509eb7824e95d193c4fb6d27/e87fb16f8058f85719647dde561bff12f998361a" Radial Tidy Tree by Gerardo Furtado
+	// Apply mouse movement listener on the nodes.
 	node.on("mouseover", function(d) {	
 		//console.log(d.ancestors());
+		// Reference: "https://bl.ocks.org/anonymous/bb5be85d509eb7824e95d193c4fb6d27/e87fb16f8058f85719647dde561bff12f998361a" Radial Tidy Tree by Gerardo Furtado
+		// Get all the ancestor nodes of the selected node.
 		filteredNode = node.filter(function(e) {
 			return d.ancestors().indexOf(e) > -1
 		});
 		//console.log(filteredNode);
 		
+		// Highlight effect - Make the circle white and bigger.
 		filteredNode.selectAll("circle")
 			.style("fill", "white")
 			.attr("r", 4);
 		
+		// Highlight effect - Make the labels white and bigger.
 		filteredNode.selectAll("text")
 			.style("fill", "white")
 			.style("font-size", "20px");
-            /*.clone(true).lower() // black-out the line behind the text, making the text easier to read. 
-			.attr("stroke", "black")
-            .attr("stroke-width", "6px");*/
 		
+		// Remove the root node.
 		filteredLink = d.ancestors();
 		filteredLink.pop();
 		//console.log(filteredLink);
+		
+		// Highlight effect - Make the lines white and thicker.
 		whiteLink = g.selectAll(".whiteLink")
             .data(filteredLink)
             .enter().append("path")
@@ -139,9 +158,11 @@ d3.csv("radial_food_data.csv").then(function(data){
             .style("opacity", 0.8);
 		
 		if(d.children == null){ // only show tooltip on leaf nodes
+			// Get the name
             var name = d.id.substring(d.id.lastIndexOf(".")+1);
 			var type;
 			
+			// Get what type of food
 			if(d.data.value == 1){
 				type = "Dairy";
 			}
@@ -161,6 +182,8 @@ d3.csv("radial_food_data.csv").then(function(data){
 				type = "Vegetable";
 			}
 			
+			// Main canvas tooltip, position it based on the mouse's position.
+			// Change the texts based on the selected node's name and type.
 			tooltip.style("left", (d3.event.pageX + 25) + "px")
                 .style("top", (d3.event.pageY + 25) + "px")
                 .select("#name")
@@ -169,37 +192,84 @@ d3.csv("radial_food_data.csv").then(function(data){
 			tooltip.select("#type")
                 .text(type);
 			
-			tooltip.append("img")
+			// Image tooltip will be placed over the main tooltip.
+			tooltip2.style("left", (d3.event.pageX + 25) + "px")
+                .style("top", (d3.event.pageY + 80) + "px");
+			
+			tooltip2.append("img")
                 .attr("src", "images/" + name + ".jpg");
 			
-			// Make tooltip visible.
-            d3.select("#tooltip").classed("hidden", false);
-			console.log(tooltip);
+			// Nutrition Fact tooltip will be placed over the main tooltip, under the image tooltip.
+			tooltip3.style("left", (d3.event.pageX + 25) + "px")
+                .style("top", (d3.event.pageY + 237) + "px");
 			
+            line.style("left", (d3.event.pageX + 25) + "px")
+                .style("top", (d3.event.pageY + 276) + "px");
+			
+			line2.style("left", (d3.event.pageX + 25) + "px")
+                .style("top", (d3.event.pageY + 323) + "px");
+			
+			console.log(d);
+			// Change the nutrition values based on the data 
+			tooltip3.select("#size").text(d.data.size); // just number
+			tooltip3.select("#calories").text(d.data.calories); // just number
+			tooltip3.select("#fat").text(" " + d.data.fat + "g"); // in g
+			tooltip3.select("#cholesterol").text(" " + d.data.cholesterol + "mg"); // in mg
+			tooltip3.select("#sodium").text(" " + d.data.sodium + "mg"); // in mg
+			tooltip3.select("#carbohydrates").text(" " + d.data.carbohydrate + "g"); // in g
+			tooltip3.select("#protein").text(" " + d.data.protein + "g"); // in g
+			
+			// Make tooltips and lines visible.
+            d3.select("#tooltip").classed("hidden", false);
+			d3.select("#tooltip2").classed("hidden", false);
+			d3.select("#tooltip3").classed("hidden", false);
+			d3.select("#line").classed("hidden", false);
+			d3.select("#line2").classed("hidden", false);
+			
+			console.log(tooltip);
 		}
 	});
 
 	node.on("mousemove", function() { // tooltip follow the mouse
-        tooltip.style("left", (d3.event.pageX + 25) + "px")
+        // Tooltips and lines follow the mouse 
+		tooltip.style("left", (d3.event.pageX + 25) + "px")
             .style("top", (d3.event.pageY + 25) + "px");   
+		
+		tooltip2.style("left", (d3.event.pageX + 25) + "px")
+            .style("top", (d3.event.pageY + 80) + "px");  
+		
+		tooltip3.style("left", (d3.event.pageX + 25) + "px")
+            .style("top", (d3.event.pageY + 237) + "px");  
+		
+		line.style("left", (d3.event.pageX + 25) + "px")
+            .style("top", (d3.event.pageY + 276) + "px");
+		
+		line2.style("left", (d3.event.pageX + 25) + "px")
+            .style("top", (d3.event.pageY + 323) + "px");
     });
 	
 	node.on("mouseout", function(d) {
-		//filteredNode.select("circle").removel;
+        // all the nodes come back to the original color and size
 		filteredNode.selectAll("circle").attr("r", 2.5).style("fill", d.data.value == 0? "rgb(255,255,255)":color(d.data.value));
 		filteredNode.selectAll("text").style("font-size", "10px").style("fill", d.data.value == 0? "rgb(255,255,255)":color(d.data.value));
 		
-		//console.log(whiteLink);
+		// delete the white link
 		whiteLink.remove();
 		
-		// Make tooltip invisible when mouse is off. 
+		// Make tooltips and lines invisible when mouse is off. 
         d3.select("#tooltip").classed("hidden", true);
+		d3.select("#tooltip2").classed("hidden", true);
+		d3.select("#tooltip3").classed("hidden", true);
+		d3.select("#line").classed("hidden", true);
+		d3.select("#line2").classed("hidden", true);
 		
-		tooltip.select("img").remove();
+		// Remove picture 
+		tooltip2.select("img").remove();
 
 	});
 	
 	// Reference: https://stackoverflow.com/questions/39688256/force-layout-zoom-resets-on-first-tick-of-dragging-or-zomming
+	// Initializing zoom point.
 	var transform = d3.zoomIdentity
         .translate(width / 2, height / 2)
         .scale(0.9);
@@ -218,19 +288,11 @@ function project(x, y) { // Starting from the "display" (first in the array) mov
     return [radius * Math.cos(angle), radius * Math.sin(angle)];
 }
 
-// Function that 
+// Function that makes zoom feature visible to the user. 
 // Reference: https://bl.ocks.org/mbostock/db6b4335bf1662b413e7968910104f0f/e59ab9526e02ec7827aa7420b0f02f9bcf960c7d - Pan & Zoom Axes by Mike Bostock
 function zoomed() {
-	//console.log(d3.event.transform.x)
-	// Change the circle size and position 
-	//link.attr("transform", d3.event.transform);
-	// Change the text size and position 
-	//node.attr("transform", d3.event.transform);
-	// Rescale the x and y axis 
-	//g.attr("transform", "translate(" + d3.event.transform.x + "," + d3.event.transform.y + ")");
+	// Change the size and position of all the elements in g
 	g.attr("transform", d3.event.transform);
-
-
 }
 
 

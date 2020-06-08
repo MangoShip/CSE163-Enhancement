@@ -1,148 +1,145 @@
-id,value,calories,fat,cholesterol,sodium,carbohydrate,protein
+id,value,size,calories,fat,cholesterol,sodium,carbohydrate,protein
 food,0
 food.dairy,1
-food.dairy.Butter,1
-food.dairy.Cheese,1
-food.dairy.Cream,1
-food.dairy.Ice Cream,1
-food.dairy.Milk,1
-food.dairy.Yogurt,1
+food.dairy.Butter,1,1 tbsp (14.2 g),102,12,31,2,0,0.1
+food.dairy.Cheese,1,1 slice (1 oz),113,9,29,174,0.4,7
+food.dairy.Cream,1,1 tbsp (15 g),29,2.9,10,6,0.5,0.4
+food.dairy.Ice Cream,1,1/2 cup (66 g),137,7,29,53,16,2.3
+food.dairy.Milk,1,1 cup (244 g),103,2.4,12,107,12,8
+food.dairy.Yogurt,1,1 container (170 g),100,0.7,9,61,6,17
 food.fruits,2
-food.fruits.Apple,2
-food.fruits.Apricots,2
-food.fruits.Avocado,2
-food.fruits.Banana,2
-food.fruits.Blackberries,2
-food.fruits.Blueberries,2
-food.fruits.Cantaloupe,2
-food.fruits.Cherries,2
-food.fruits.Cranberries,2
-food.fruits.Dragonfruit,2
-food.fruits.Durian,2
-food.fruits.Grapefruit,2
-food.fruits.Grapes,2
-food.fruits.Guava,2
-food.fruits.Lemon,2
-food.fruits.Lime,2
-food.fruits.Lychee,2
-food.fruits.Mango,2
-food.fruits.Nectarine,2
-food.fruits.Orange,2
-food.fruits.Papaya,2
-food.fruits.Passion Fruit,2
-food.fruits.Peaches,2
-food.fruits.Pear,2
-food.fruits.Persimmon,2
-food.fruits.Pineapple,2
-food.fruits.Plums,2
-food.fruits.Pomegranate,2
-food.fruits.Raspberries,2
-food.fruits.Strawberries,2
-food.fruits.Tangerine,2
-food.fruits.Watermelon,2
+food.fruits.Apple,2,1 medium (182 g),95,0.3,0,2,25,0.5
+food.fruits.Apricots,2,1 cup (165 g),79,0.6,0,2,18,2.3
+food.fruits.Avocado,2,1 cup (146 g),234,21,0,10,12,2.9
+food.fruits.Banana,2,1 medium (118 g),105,0.4,0,1,27,1.3
+food.fruits.Blackberries,2,1 cup (144 g),62,0.7,0,1,14,2
+food.fruits.Blueberries,2,1 cup (148 g),85,0.5,0,1,21,1.1
+food.fruits.Cantaloupe,2,1 medium (552 g),186,1,0,88,45,4.6
+food.fruits.Cherries,2,1 cup (155 g),77,0.5,0,5,19,1.6
+food.fruits.Cranberries,2,0.33 cup (40 g),123,0.5,0,1,33,0
+food.fruits.Durian,2,1 cup (243 g),357,13,0,0,66,4
+food.fruits.Grapefruit,2,1 cup (230 g),97,0.3,0,0,25,1.8
+food.fruits.Grapes,2,1 cup (92 g),62,0.3,0,2,16,0.6
+food.fruits.Guava,2,1 cup (165 g),112,1.6,0,3,24,4.2
+food.fruits.Lemon,2,1 cup (212 g),61,0.6,0,4,20,2.3
+food.fruits.Lime,2,100 g,30,0.2,0,2,11,0.7
+food.fruits.Lychee,2,1 cup (190 g),125,0.8,0,2,31,1.6
+food.fruits.Mango,2,1 cup (165 g),99,0.6,0,2,25,1.4
+food.fruits.Nectarine,2,1 cup (143 g),63,0.5,0,0,15,1.5
+food.fruits.Orange,2,1 cup (180 g),85,0.2,0,0,21,1.7
+food.fruits.Papaya,2,152 g,59,0.2,0,0,15,1
+food.fruits.Passion Fruit,2,1 cup (236 g),229,1.7,0,66,55,5
+food.fruits.Peaches,2,1 cup (154 g),61,0.4,0,0,15,1.4
+food.fruits.Pear,2,1 medium (166 g),100,0,0,0,26,1
+food.fruits.Persimmon,2,100 g,127,0.4,0,1,34,0.8
+food.fruits.Pineapple,2,1 fruit (905 g),452,1.1,0,9,119,4.9
+food.fruits.Plums,2,1 cup (165 g),76,0.5,0,0,19,1.2
+food.fruits.Pomegranate,2,100 g,83,1.2,0,3,19,1.7
+food.fruits.Raspberries,2,1 cup (123 g),65,0.8,0,1,15,1.5
+food.fruits.Strawberries,2,1 medium (12 g),4,0,0,0,0.9,0.1
+food.fruits.Tangerine,2,1 medium (88 g),47,0.3,0,2,12,0.7
+food.fruits.Watermelon,2,100 g,30,0.2,0,1,8,0.6
 food.meat,3
-food.meat.Bacon,3
-food.meat.Chicken,3
-food.meat.Duck,3
-food.meat.Ham,3
-food.meat.Lamb,3
-food.meat.Pork,3
-food.meat.Salami,3
-food.meat.Sausage,3
-food.meat.Steak,3
-food.meat.Turkey,3
+food.meat.Bacon,3,1 slice (8.1 g),44,3.5,9,178,0.1,2.9
+food.meat.Chicken,3,100 g,239,14,88,82,0,27
+food.meat.Duck,3,100 g,337,28,84,59,0,19
+food.meat.Ham,3,1 cup (140 g),203,8,74,1684,2.1,29
+food.meat.Lamb,3,3 oz (85 g),250,18,82,61,0,21
+food.meat.Pork,3,3 oz (85 g),206,8,74,1684,2.1,29
+food.meat.Salami,3,1 slice (12.3 g),41,3.2,11,214,0.3,2.7
+food.meat.Sausage,3,2.67 oz (76 g),229,20,54,644,1.5,9
+food.meat.Steak,3,1 steak (251 g),679,48,196,146,0,62
+food.meat.Turkey,3,1 oz (28.4 g),54,2.1,31,29,0,8
 food.nuts,4
-food.nuts.Almond,4
-food.nuts.Cashew,4
-food.nuts.Chestnut,4
-food.nuts.Coconut,4
-food.nuts.Hazelnut,4
-food.nuts.Macadamia,4
-food.nuts.Peanut,4
-food.nuts.Pecan,4
-food.nuts.Pistachio,4
-food.nuts.Walnut,4
+food.nuts.Almond,4,1 oz (28.3 g),163,14,0,0,6.1,6
+food.nuts.Cashew,4,1 oz (28.4 g),157,12,0,3,9,5
+food.nuts.Chestnut,4,1 oz (28.4 g),37,0.4,0,8,8,0.6
+food.nuts.Coconut,4,1 cup (80 g),283,28,0,0,10,3
+food.nuts.Hazelnut,4,1 cup (135 g),848,82,0,0,23,20
+food.nuts.Macadamia,4,1 cup (134 g),962,102,0,7,19,11
+food.nuts.Peanut,4,1 cup (146 g),828,72,0,26,24,38
+food.nuts.Pecan,4,1 cup (99 g),684,71,0,0,14,9
+food.nuts.Pistachio,4,1 cup (123 g),691,56,0,1,34,25
+food.nuts.Walnut,4,1 cup (80 g),523,52,0,2,11,12
 food.seafood,5
 food.seafood.fish,5
-food.seafood.fish.Bass,5
-food.seafood.fish.Carp,5
-food.seafood.fish.Catfish,5
-food.seafood.fish.Cod,5
-food.seafood.fish.Flounder,5
-food.seafood.fish.Salmon,5
-food.seafood.fish.Trout,5
-food.seafood.fish.Tuna,5
+food.seafood.fish.Bass,5,85 g,105,2.2,0,0,0,20.1
+food.seafood.fish.Carp,5,100 g,162,7.2,84,63,0,22.9
+food.seafood.fish.Catfish,5,3.5 oz (100 g),105,2.9,0,50,0,18
+food.seafood.fish.Cod,5,3 oz (85 g),70, 0.6,37,46,0,15
+food.seafood.fish.Flounder,5,3 oz (85 g),60,1.6,38,252,0,11
+food.seafood.fish.Salmon,5,3 oz (85 g),102,3.2,63,43,0,17
+food.seafood.fish.Trout,5,3 oz (85 g),120,5,50,43,0,17
+food.seafood.fish.Tuna,5,1 can (165 g),191,1.4,0,83,0,42
 food.seafood.clams,5
-food.seafood.clams.Donax Trunculus,5
-food.seafood.clams.Geoduck,5
+food.seafood.clams.Geoduck,5,1 serving,85,1,0,0,0,15.5
 food.seafood.clams.hard-Shell,5
-food.seafood.clams.hard-Shell.Cherrystones,5
-food.seafood.clams.hard-Shell.Chowders,5
-food.seafood.clams.hard-Shell.Littlenecks,5
-food.seafood.clams.hard-Shell.Middlenecks,5
-food.seafood.clams.Manila,5
-food.seafood.clams.Ocean Quahog,5
+food.seafood.clams.hard-Shell.Cherrystones,5,1 oz,24,0.27,8,170,1.01,4.16
+food.seafood.clams.hard-Shell.Chowders,5,0.5 bowl (259 g),265.5,15.5,94,520.5,12.5,19.5
+food.seafood.clams.hard-Shell.Littlenecks,5,3 oz (85 g),127,2,57,95,4,22
+food.seafood.clams.hard-Shell.Middlenecks,5,100 g,148,2,0,0,5.1,25.5
+food.seafood.clams.Manila,5,3 oz,120,2,57,95,4,22
+food.seafood.clams.Ocean Quahog,5,100 g,74,0.97,34,56,2.57,12.77
 food.seafood.clams.razor,5
-food.seafood.clams.razor.Atlantic Jackknife,5
-food.seafood.clams.razor.Bamboo,5
-food.seafood.clams.razor.Pacific,5
-food.seafood.clams.Soft-Shell,5
-food.seafood.clams.Surf,5
+food.seafood.clams.razor.Atlantic Jackknife,5,19 g,9,0.11,0,0,0.38,1.54
+food.seafood.clams.razor.Bamboo,5,116.24 g,106,1.8,85,602,1.8,21.2
+food.seafood.clams.razor.Pacific,5,100 g,60,2,30,881,1,10
+food.seafood.clams.Soft-Shell,5,1 serving,74,0.9,0,56,34,12.7
+food.seafood.clams.Surf,5,1 serving,74,0.9,0,56,34,12.7
 food.vegetables,6
 food.vegetables.bulbs,6
-food.vegetables.bulbs.Fennel,6
-food.vegetables.bulbs.Garlic,6
-food.vegetables.bulbs.Leeks,6
-food.vegetables.bulbs.Onions,6
-food.vegetables.bulbs.Shallots,6
-food.vegetables.bulbs.Spring onions,6
+food.vegetables.bulbs.Fennel,6,1 cup (87 g),27,0.2,0,45,6,1.1
+food.vegetables.bulbs.Garlic,6,3 g,4,0,0,1,1,0
+food.vegetables.bulbs.Leeks,6,1 slice (6 g),4,0,0,1,0.8,0.1
+food.vegetables.bulbs.Onions,6,1 medium (110 g),44,0.1,0,4,10,1.2
+food.vegetables.bulbs.Shallots,6,100 g,72,0.1,0,12,17,2.5
+food.vegetables.bulbs.Spring onions,6,1 medium (15 g),5,0,0,2,1.1,0.3
 food.vegetables.flowers,6
-food.vegetables.flowers.Broccoli,6
-food.vegetables.flowers.Cauliflower,6
-food.vegetables.flowers.Fresh herbs,6
+food.vegetables.flowers.Broccoli,6,1 cup (91 g),31,0.3,0,30,6,2.5
+food.vegetables.flowers.Cauliflower,6,1 medium (588 g),147,1.6,0,176,29,11
 food.vegetables.fruits,6
-food.vegetables.fruits.Capsicums,6
-food.vegetables.fruits.Chilli peppers,6
-food.vegetables.fruits.Cucumber,6
-food.vegetables.fruits.Eggplant,6
-food.vegetables.fruits.Melons,6
-food.vegetables.fruits.Pumpkins,6
-food.vegetables.fruits.Tomatoes,6
+food.vegetables.fruits.Capsicums,6,100 g,40,0.2,0,7,9,2
+food.vegetables.fruits.Chilli peppers,6,100 g,40,0.2,0,7,9,2
+food.vegetables.fruits.Cucumber,6,0.5 slices,8,0.1,0,0,1.9,0.3
+food.vegetables.fruits.Eggplant,6,1 cup (82 g),20,0.1,0,2,4.8,0.8
+food.vegetables.fruits.Melons,6,1 medium (552 g),186,1,0,88,45,4.6
+food.vegetables.fruits.Pumpkins,6,1 cup (116 g),30,0.1,0,1,8,1.2
+food.vegetables.fruits.Tomatoes,6,1 medium (123 g),22,0.2,0,6,4.8,1.1
 food.vegetables.fungi,6
-food.vegetables.fungi.Mushrooms,6
+food.vegetables.fungi.Mushrooms,6,1 medium (18 g),4,0.1,0,1,0.6,0.6
 food.vegetables.leaves,6
-food.vegetables.leaves.Brussels Sprouts,6
-food.vegetables.leaves.Cabbages,6
-food.vegetables.leaves.Kale,6
-food.vegetables.leaves.Lettuce,6
-food.vegetables.leaves.Spinach,6
+food.vegetables.leaves.Brussels Sprouts,6,1 cup (88 g),38,0.3,0,22,8,3
+food.vegetables.leaves.Cabbages,6,1 medium (23 g),6,0,0,4,1.3,0.3
+food.vegetables.leaves.Kale,6,1 cup (67 g),33,0.6,0,25,6,2.9
+food.vegetables.leaves.Lettuce,6,1 cup (36 g),5,0.1,0,10,1,0.5
+food.vegetables.leaves.Spinach,6,1 cup (30 g),7,0,0,24,1,1,
 food.vegetables.roots,6
-food.vegetables.roots.Beetroot,6
-food.vegetables.roots.Carrots,6
-food.vegetables.roots.Ginger,6
-food.vegetables.roots.Parsnips,6
-food.vegetables.roots.Radishes,6
-food.vegetables.roots.Turnips,6
+food.vegetables.roots.Beetroot,6,1 cup (136 g),59,0.2,0,106,13,2.2
+food.vegetables.roots.Carrots,6,1 medium,25,0,0,0,6,0.5
+food.vegetables.roots.Ginger,6,5 slices (11 g),9,0.1,0,1,2,0.2
+food.vegetables.roots.Parsnips,6,1 cup (133 g),100,0.4,0,13,24,1.6
+food.vegetables.roots.Radishes,6,1 cup (116 g),18,0.1,0,45,3.9,0.8
+food.vegetables.roots.Turnips,6,1 medium (122 g),34,0.1,0,82,8,1.1
 food.vegetables.seeds,6
 food.vegetables.seeds.beans,6
-food.vegetables.seeds.beans.Black Beans,6
-food.vegetables.seeds.beans.Black-eyed Peas,6
-food.vegetables.seeds.beans.Cannellini Beans,6
-food.vegetables.seeds.beans.Fava Beans,6
-food.vegetables.seeds.beans.Garbanzo Beans,6
-food.vegetables.seeds.beans.Great Northern Beans,6
-food.vegetables.seeds.beans.Kidney Beans,6
-food.vegetables.seeds.beans.Lentils,6
-food.vegetables.seeds.beans.Lima Beans,6
-food.vegetables.seeds.beans.Navy Beans,6
-food.vegetables.seeds.beans.Pinto Beans,6
-food.vegetables.seeds.beans.Red Beans,6
-food.vegetables.seeds.beans.Soybeans,6
-food.vegetables.seeds.Peas,6
-food.vegetables.seeds.Sweet Corn,6
+food.vegetables.seeds.beans.Black Beans,6,0.5 cup,109,0.4,0,0,20,7
+food.vegetables.seeds.beans.Black-eyed Peas,6,1 cup (171 g),198,0.9,0,7,35,13
+food.vegetables.seeds.beans.Cannellini Beans,6,1 cup,225,0.9,0,0,40.4,15.4
+food.vegetables.seeds.beans.Fava Beans,6,1 cup (126 g),111,0.9,0,32,22,10
+food.vegetables.seeds.beans.Garbanzo Beans,6,1 cup (200 g),729,12,0,48,121,39
+food.vegetables.seeds.beans.Great Northern Beans,6,1 cup (182 g),255,1.1,0,0,47,15
+food.vegetables.seeds.beans.Kidney Beans,6,1 cup (184 g),613,1.5,0,44,110,43
+food.vegetables.seeds.beans.Lentils,6,1 cup (198 g),230,0.8,0,4,40,18
+food.vegetables.seeds.beans.Lima Beans,6,1 cup (188 g),217,0.7,0,4,39,15
+food.vegetables.seeds.beans.Navy Beans,6,1 cup (182 g),255,1.1,0,0,47,15
+food.vegetables.seeds.beans.Pinto Beans,6,1 cup (198 g),670,2.4,0,23,121,41
+food.vegetables.seeds.beans.Red Beans,6,1 cup (184 g),613,1.5,0,44,110,43
+food.vegetables.seeds.beans.Soybeans,6,1 cup (186 g),830,37,0,4,56,68
+food.vegetables.seeds.Peas,6,1 cup (145 g),118,0.6,0,7,21,8
+food.vegetables.seeds.Sweet Corn,6,1 medium (90 g),77,1.1,0,14,17,2.9
 food.vegetables.stems,6
-food.vegetables.stems.Asparagus,6
-food.vegetables.stems.Celery,6
+food.vegetables.stems.Asparagus,6,1 cup (134 g),27,0.2,0,3,5,2.9
+food.vegetables.stems.Celery,6,1 stalk,5.6,0.1,0,0,1.2,0.3
 food.vegetables.tubers,6
-food.vegetables.tubers.Potatoes,6
-food.vegetables.tubers.Yams,6
+food.vegetables.tubers.Potatoes,6,1 medium (148 g),110,0,0,8,26,3
+food.vegetables.tubers.Yams,6,1 cup (150 g),177,0.3,0,14,42,2.3
